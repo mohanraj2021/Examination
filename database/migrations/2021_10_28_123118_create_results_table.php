@@ -15,13 +15,13 @@ class CreateResultsTable extends Migration
     {
         Schema::create('results', function (Blueprint $table) {
             $table->id();
-            $table->integer('user_id')->unsigned();
+            $table->bigInteger('user_id')->unsigned()->index();
             $table->foreign('user_id')->references('id')->on('users');
-            $table->integer('subject_id')->unsigned();
-            $table->foreign('subject_id')->references('subject_name')->on('question_models');
+            $table->string('subject_name');
+            $table->foreign('subject_name')->references('subject_name')->on('question_models')->onUpdate('cascade');
             $table->string('total_mark');
             $table->string('obtained_mark');
-            $table->date('exam_date');
+            //$table->date('exam_date');
             $table->timestamps();
         });
     }

@@ -31,6 +31,8 @@ Route::group(['middleware'=>'auth'],function(){
     Route::group(['prefix'=>'admin','middleware'=>'is_admin','as'=>'admin.'],function(){
 
         Route::get('/dashboard', [AdminController::class, 'index'])->name('dashboard');
+        Route::get('/exam',[AdminController::class, 'exam'])->name('exam');
+        Route::post('/add_question',[AdminController::class, 'add_question'])->name('add_question');
     });
 
 

@@ -16,11 +16,9 @@ class CreateQuestionModelsTable extends Migration
         Schema::create('question_models', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('opt1');
-            $table->string('opt2');
-            $table->string('opt3');
-            $table->string('opt4');
-            $table->string('subject_name');            
+            $table->string('opts');
+            $table->string('answer');
+            $table->string('subject_name')->unique();            
             $table->timestamps();
         });
     }
