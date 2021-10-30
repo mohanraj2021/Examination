@@ -20,6 +20,7 @@ class StudentController extends Controller
     public function success(Request $request){
         $marks = 0;
         $questions = QuestionModel::all();
+        $count = count($questions);
         foreach($questions as $key => $question){
             $actual_answer = $question['answer'];
             $value = "answer".$key+1;
@@ -34,6 +35,6 @@ class StudentController extends Controller
         }
         
         
-        return view('student.success',compact('marks'));
+        return view('student.success',compact('marks','count'));
     }
 }
