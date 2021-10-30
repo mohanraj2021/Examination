@@ -18,15 +18,15 @@ class AdminController extends Controller
     }
 
     public function add_question(Request $request){
-
+        
         $question_model = new QuestionModel;
-        $options = json_encode(array('option1'=>$request->options1,'option2'=>$request->options2,'option3'=>$request->options3,'option4'=>$request->options4));
+        $options = json_encode(array('option1'=>$request->option1,'option2'=>$request->option2,'option3'=>$request->option3,'option4'=>$request->option4));
         $question_model->name = $request->name;
         $question_model->opts = $options;
         $question_model->answer = $request->answer;
-        $question_model->subject_name = $request->subject_name
-        
+        $question_model->subject_name = $request->subject[0]; 
 
+        $question_model->save();
 
         return view('admin/exam');
     }

@@ -38,6 +38,9 @@ Route::group(['middleware'=>'auth'],function(){
 
     Route::group(['prefix'=>'student','as'=>'student.'],function(){
         Route::get('/home', [StudentController::class, 'index'])->name('home');
+        Route::get('/exam_portal', [StudentController::class, 'exam_portal'])->name('exam_portal');
+        Route::post('/success',[StudentController::class, 'success'])->name('success');
+
     });
 
 });

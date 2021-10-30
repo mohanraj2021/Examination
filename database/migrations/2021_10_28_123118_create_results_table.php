@@ -18,10 +18,9 @@ class CreateResultsTable extends Migration
             $table->bigInteger('user_id')->unsigned()->index();
             $table->foreign('user_id')->references('id')->on('users');
             $table->string('subject_name');
-            $table->foreign('subject_name')->references('subject_name')->on('question_models')->onUpdate('cascade');
             $table->string('total_mark');
             $table->string('obtained_mark');
-            //$table->date('exam_date');
+            $table->date('exam_date');
             $table->timestamps();
         });
     }

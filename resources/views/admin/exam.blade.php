@@ -14,7 +14,7 @@
             <!-- Page Heading -->
             <header class="bg-white shadow">
                 <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                    Dashboard
+                    Exam
                 </div>
             </header><br>
             <br>
@@ -39,6 +39,7 @@
                 <div class="relative w-auto my-6 mx-auto max-w-sm">
                     <!--content-->
                     <form method="POST" action="{{ route('admin.add_question') }}">
+                        @csrf
                         <div class=" border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
                             <!--header-->
                             <div class=" flex items-start justify-between p-5 border-b border-solid border-gray-200 rounded-t">

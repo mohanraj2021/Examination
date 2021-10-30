@@ -18,7 +18,7 @@ class CreateQuestionModelsTable extends Migration
             $table->string('name');
             $table->string('opts');
             $table->string('answer');
-            $table->string('subject_name')->unique();            
+            $table->string('subject_name');            
             $table->timestamps();
         });
     }
